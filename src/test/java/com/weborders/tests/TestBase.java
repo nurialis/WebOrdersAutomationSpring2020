@@ -13,7 +13,6 @@ public abstract class TestBase {
         String URL = ConfigurationReader.getProperty("url");
         Driver.getDriver().get(URL);
         Driver.getDriver().manage().window().maximize();
-
     }
 
     @AfterMethod

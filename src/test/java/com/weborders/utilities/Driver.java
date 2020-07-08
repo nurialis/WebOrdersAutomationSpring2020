@@ -27,15 +27,14 @@ public class Driver {
                     break;
                 default:
                     throw new RuntimeException("Wrong browser name!");
-        }
-        }
+            }
+          }
         return driver;
     }
     public static void closeDriver(){
          if(driver != null){
             driver.quit();
             driver = null;
-
         }
     }
 }
