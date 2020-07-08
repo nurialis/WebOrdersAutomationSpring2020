@@ -10,7 +10,7 @@ public abstract class BasePage {
         //will be used inside every page class
         //since this variable is protected
         //it will not be visible in test classes
-        protected WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20);
+        protected WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 20); // explicit wait
 
     public BasePage (){
         //we put this line to be able to use @FindBy, @FindBys.. annotations
