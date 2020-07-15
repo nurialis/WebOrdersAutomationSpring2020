@@ -43,7 +43,7 @@ public abstract class BasePage { // abstract something is not final or concreate
         viewAllProducts.click();
     }
 
-    public void clickOrder(){
+    public void clickOnOrder(){
         System.out.println("Clicking on 'Order' "); // Optional calismadigi zaman nerede calistimadigini gosterir
         wait.until(ExpectedConditions.elementToBeClickable(order)).click();
     }

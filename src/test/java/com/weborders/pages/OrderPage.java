@@ -28,7 +28,7 @@ public class OrderPage extends BasePage {
     @FindBy(css = "[value='Calculate']")
     private WebElement calculateButton;
 
-    // Adress Information
+    //Address Information
     @FindBy(id = "ctl00_MainContent_fmwOrder_txtName")
     private WebElement customerName;
 
@@ -44,7 +44,7 @@ public class OrderPage extends BasePage {
     @FindBy(id = "ctl00_MainContent_fmwOrder_TextBox5")
     private WebElement zip;
 
-    // Payment Information
+    //Payment Information
     @FindBy(id = "ctl00_MainContent_fmwOrder_TextBox1")
     private WebElement expirationDate;
 
@@ -57,24 +57,25 @@ public class OrderPage extends BasePage {
     @FindBy(id = "ctl00_MainContent_fmwOrder_InsertButton")
     private WebElement processButton;
 
-    public void selectProducts(String productName){
+    public void selectProduct(String productName) {
         Select select = new Select(productDropdown);
         select.selectByVisibleText(productName);
     }
 
-    public void enterQuantity(String quantityValue) { // delete old value and enter new in one action
-        quantity.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), quantityValue); // hucrede olan rakami silip istedigin rakami giriyorsun
+    public void enterQuantity(String quantityValue) {
+        quantity.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), quantityValue);
     }
 
     public void enterPricePerUnit(String pricePerUnitValue) {
-        pricePerUnit.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), pricePerUnitValue); // hucrede olan rakami silip istedigin rakami giriyorsun
+        //delete old value and enter new in one action
+        pricePerUnit.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), pricePerUnitValue);
     }
 
     public void enterDiscount(String discountValue) {
-        discount.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), discountValue);// hucrede olan rakami silip istedigin rakami giriyorsun
+        discount.sendKeys(Keys.HOME, Keys.chord(Keys.SHIFT, Keys.END), discountValue);
     }
 
-    public void clickToCalculate(){
+    public void clickToCalculate() {
         calculateButton.click();
     }
 
@@ -97,7 +98,6 @@ public class OrderPage extends BasePage {
     public void enterZip(String zipValue) {
         zip.sendKeys(zipValue);
     }
-
     /**
      * Method to select card type
      *

@@ -14,16 +14,15 @@ public class LoginPage extends BasePage {
     @FindBy(id = "ctl00_MainContent_password")
     private WebElement passwordElement;
 
-    public void login(String userName, String password) { // alttaki ile ayni
+    public void login(String userName, String password){
         wait.until(ExpectedConditions.visibilityOf(userNameElement)).sendKeys(userName);
         wait.until(ExpectedConditions.visibilityOf(passwordElement)).sendKeys(password, Keys.ENTER);
     }
 
-    public void login() { // usteki ile ayni
+    public void login(){
         String userName = ConfigurationReader.getProperty("username");
         String password = ConfigurationReader.getProperty("password");
-        wait.until(ExpectedConditions.visibilityOf(userNameElement)).sendKeys(userName);
-        wait.until(ExpectedConditions.visibilityOf(passwordElement)).sendKeys(password, Keys.ENTER);
+        userNameElement.sendKeys(userName);
+        passwordElement.sendKeys(password, Keys.ENTER);
     }
-
 }
