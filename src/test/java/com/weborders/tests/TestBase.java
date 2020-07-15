@@ -1,7 +1,9 @@
 package com.weborders.tests;
 
+import com.weborders.utilities.BrowserUtils;
 import com.weborders.utilities.ConfigurationReader;
 import com.weborders.utilities.Driver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,7 +18,11 @@ public abstract class TestBase {
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown(ITestResult iTestResult){
+        //if test failed, take a screenshot
+        if(iTestResult.getStatus() == ITestResult.FAILURE){
+            BrowserUtils.takeScreenshot();
+        }
         Driver.closeDriver();
     }
 }
